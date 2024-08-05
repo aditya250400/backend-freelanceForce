@@ -16,10 +16,10 @@ return new class extends Migration
             $table->longText('file')->nullable();
             $table->longText('note')->nullable();
             $table->date('expired')->nullable();
-            $table->integer('buyer_id');
-            $table->integer('freelancer_id');
-            $table->integer('service_id');
-            $table->integer('order_status_id');
+            $table->integer('buyer_id')->references('id')->on('user')->cascadeOnDelete();
+            $table->integer('freelancer_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->integer('service_id')->references('id')->on('service')->cascadeOnDelete();
+            $table->integer('order_status_id')->references('id')->on('order_status')->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();
         });

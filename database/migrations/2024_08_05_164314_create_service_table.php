@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('revision_limit')->nullable();
             $table->string('price')->nullable();
             $table->longText('note')->nullable();
-            $table->integer('user_id');
+            $table->foreignId('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();
         });

@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tagline', function (Blueprint $table) {
+        Schema::create('review', function (Blueprint $table) {
             $table->id();
-            $table->string('tagline');
+            $table->integer('rating');
+            $table->longText('review');
             $table->foreignId('service_id')->references('id')->on('service')->cascadeOnDelete();
             $table->timestamps();
         });
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tagline');
+        Schema::dropIfExists('review');
     }
 };

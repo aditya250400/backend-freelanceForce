@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('experience_user', function (Blueprint $table) {
             $table->id();
-            $table->string('biography');
-            $table->id('detail_user_id')->nullable();
+            $table->text('experience');
+            $table->foreignId('detail_user_id')->references('id')->on('detail_user')->cascadeOnDelete();
             $table->timestamps();
         });
     }

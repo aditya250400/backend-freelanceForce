@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('thumbnail_service', function (Blueprint $table) {
             $table->id();
-            $table->varchar('thumbnail');
-            $table->integer('service_id');
+            $table->string('thumbnail');
+            $table->foreignId('service_id')->references('id')->on('service')->cascadeOnDelete();
             $table->timestamps();
         });
     }
