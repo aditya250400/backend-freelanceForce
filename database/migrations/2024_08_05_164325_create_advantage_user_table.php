@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('advantage_user', function (Blueprint $table) {
             $table->id();
             $table->string('advantage');
-            $table->foreignId('service_id')->references('id')->on('service')->cascadeOnDelete();;
+            $table->foreignId('service_id')->references('id')->on('service')->cascadeOnDelete();
             $table->timestamps();
         });
     }
