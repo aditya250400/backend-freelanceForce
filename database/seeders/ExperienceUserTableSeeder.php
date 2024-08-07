@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\DetailUser;
+use App\Models\ExperienceUser;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class DetailUserTableSeeder extends Seeder
+class ExperienceUserTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        DetailUser::factory()->count(50)->create();
+        ExperienceUser::factory()->count(40)->create();
     }
 }

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->text('photo')->nullable();
             $table->string('role')->nullable();
             $table->string('contact_number')->nullable();
-            $table->longText('biography');
+            $table->longText('biography')->nullable();
             $table->foreignId('user_id')->unique()->references('id')->on('users')->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();
