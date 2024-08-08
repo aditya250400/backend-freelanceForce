@@ -72,7 +72,7 @@ class ServiceFactory extends Factory
             'description' => $this->faker->paragraph(2),
             'delivery_time' => $this->faker->numberBetween(1, 30),
             'revision_limit' => $this->faker->numberBetween(1, 10),
-            'price' => $this->faker->numberBetween(100000, 1500000),
+            'price' => $this->faker->numberBetween(300000, 1500000),
             'note' => $this->faker->paragraph(3),
             'user_id' => $this->faker->numberBetween(1, User::count()),
             'updated_at' => null,
